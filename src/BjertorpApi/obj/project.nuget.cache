@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "rDqrdjB5sj0p9zM1ZgUqyW5Z2tfbgyFcd3ifLz7gZ0hS6GEAxLuTBhQc2zws80qQoftRsb7FwBsSibCN9Lts3g==",
+  "success": true,
+  "projectFilePath": "D:\\Skola\\Bjertorp-backend\\src\\BjertorpApi\\BjertorpApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Oliver\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Oliver\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Oliver\\.nuget\\packages\\swashbuckle.aspnetcore\\6.1.5\\swashbuckle.aspnetcore.6.1.5.nupkg.sha512",
+    "C:\\Users\\Oliver\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.1.5\\swashbuckle.aspnetcore.swagger.6.1.5.nupkg.sha512",
+    "C:\\Users\\Oliver\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.1.5\\swashbuckle.aspnetcore.swaggergen.6.1.5.nupkg.sha512",
+    "C:\\Users\\Oliver\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.1.5\\swashbuckle.aspnetcore.swaggerui.6.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}
