@@ -1,32 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Skola\\Bjertorp-backend\\src\\BjertorpApi\\BjertorpApi.csproj": {}
+    "/Users/oliverjohansson/Documents/skola/Bjertorp-API/src/BjertorpAPI/BjertorpAPI.csproj": {}
   },
   "projects": {
-    "D:\\Skola\\Bjertorp-backend\\src\\BjertorpApi\\BjertorpApi.csproj": {
+    "/Users/oliverjohansson/Documents/skola/Bjertorp-API/src/BjertorpAPI/BjertorpAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Skola\\Bjertorp-backend\\src\\BjertorpApi\\BjertorpApi.csproj",
-        "projectName": "BjertorpApi",
-        "projectPath": "D:\\Skola\\Bjertorp-backend\\src\\BjertorpApi\\BjertorpApi.csproj",
-        "packagesPath": "C:\\Users\\Oliver\\.nuget\\packages\\",
-        "outputPath": "D:\\Skola\\Bjertorp-backend\\src\\BjertorpApi\\obj\\",
+        "projectUniqueName": "/Users/oliverjohansson/Documents/skola/Bjertorp-API/src/BjertorpAPI/BjertorpAPI.csproj",
+        "projectName": "BjertorpAPI",
+        "projectPath": "/Users/oliverjohansson/Documents/skola/Bjertorp-API/src/BjertorpAPI/BjertorpAPI.csproj",
+        "packagesPath": "/Users/oliverjohansson/.nuget/packages/",
+        "outputPath": "/Users/oliverjohansson/Documents/skola/Bjertorp-API/src/BjertorpAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Oliver\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/oliverjohansson/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -37,12 +35,12 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.1.5, )"
+              "version": "[5.6.3, )"
             }
           },
           "imports": [
@@ -63,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
         }
       }
     }
