@@ -23,5 +23,13 @@ namespace BjertorpAPI.Controllers
      var posts =  await _postsService.GetAsync();  
      return posts;
     }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Posts>> GetById(string id)
+    {
+      var post = await _postsService.GetAsync(id); 
+      if(post is null) return NotFound("No post exist with privided id"); 
+      return post; 
+    }
   }  
 }

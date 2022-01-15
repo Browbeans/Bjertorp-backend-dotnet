@@ -26,5 +26,18 @@ namespace BjertorpAPI.Services
 
     public async Task<List<Posts>> GetAsync() => 
       await _postsCollection.Find(_ => true).ToListAsync();
+
+
+    public async Task<Posts> GetAsync(string id) =>
+        await _postsCollection.Find(x => x._id == id).FirstOrDefaultAsync();
+
+    public async Task CreateAsync(Posts newPost) =>
+        await _postsCollection.InsertOneAsync(newPost);
+
+    public async Task UpdateAsync(string id, Posts updatedPost) =>
+        await _postsCollection.ReplaceOneAsync(x => x._id == id, updatedPost);
+
+    public async Task RemoveAsync(string id) =>
+        await _postsCollection.DeleteOneAsync(x => x._id == id);
   }
 }
