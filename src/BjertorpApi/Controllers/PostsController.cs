@@ -31,5 +31,18 @@ namespace BjertorpAPI.Controllers
       if(post is null) return NotFound("No post exist with privided id"); 
       return post; 
     }
+
+    [HttpPost]
+    public async Task<ActionResult<string>> CreatePost(Posts post)
+    {
+      await _postsService.CreateAsync(post);
+      return CreatedAtAction(nameof(Get), new { id = post._id }, post);
+    }
+
+    [HttpPut("{id}")]
+    public async Task<ActionResult<string>> UpdateById(string id, Posts post)
+    {
+      return await _postsService.UpdateAsync(id, post);
+    }
   }  
 }
