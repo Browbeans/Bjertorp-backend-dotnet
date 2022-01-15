@@ -11,6 +11,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Mvc;
+using BjertorpAPI.Models;
+using BjertorpAPI.Services;
 
 namespace BjertorpAPI
 {
@@ -25,13 +28,15 @@ namespace BjertorpAPI
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
-
+        {   
+            services.Configure<DatabaseSettings>(Configuration.GetSection("MongoDbDatabase"));
             services.AddControllers();
+            services.AddSingleton<PostsService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BjertorpAPI", Version = "v1" });
             });
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +48,7 @@ namespace BjertorpAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BjertorpAPI v1"));
             }
-
+    
             app.UseHttpsRedirection();
 
             app.UseRouting();
