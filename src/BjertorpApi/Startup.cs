@@ -15,6 +15,8 @@ using Microsoft.AspNetCore.Mvc;
 using BjertorpAPI.Models;
 using BjertorpAPI.Services;
 
+
+
 namespace BjertorpAPI
 {
     public class Startup
@@ -24,17 +26,31 @@ namespace BjertorpAPI
             Configuration = configuration;
         }
 
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         public IConfiguration Configuration { get; }
+   
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {   
+        {
             services.Configure<DatabaseSettings>(Configuration.GetSection("MongoDbDatabase"));
             services.AddControllers();
             services.AddSingleton<PostsService>();
+            services.AddSingleton<UserService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BjertorpAPI", Version = "v1" });
+            });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://localhost:3000",
+                                                          "https://vara-bjertorp-front.azurewebsites.net");
+                                  });
             });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
         }
@@ -54,6 +70,8 @@ namespace BjertorpAPI
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseEndpoints(endpoints =>
             {

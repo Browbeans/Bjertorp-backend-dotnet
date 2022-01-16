@@ -14,13 +14,18 @@
         "outputPath": "/Users/oliverjohansson/Documents/skola/Bjertorp-API/src/BjertorpAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/oliverjohansson/.nuget/NuGet/NuGet.Config"
+          "/Users/oliverjohansson/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/collectorbank/_packaging/Teamy%40Local/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/collectorbank/_packaging/cards/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/collectorbank/_packaging/common/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/collectorbank/_packaging/commoninfrastructure/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/collectorbank/_packaging/edge/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -38,6 +43,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.14.1, )"

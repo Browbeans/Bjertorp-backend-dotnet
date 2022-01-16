@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5Ek61utDHdo9rrZsurfQvDTmYlAIJQIr4DP3co9eukSBj2d6UEIG5S1s0eMWy1UN0klwLSBq1bJcNzpSlwHE3Q==",
+  "dgSpecHash": "3rEEoit6kqSS7HJ/tMALYf71c9XIVH7/q8bnjc2qi1bbodgW9dkCSeBUgUwjLGbNiWHd4ffQfThUC94oOT204w==",
   "success": true,
   "projectFilePath": "/Users/oliverjohansson/Documents/skola/Bjertorp-API/src/BjertorpAPI/BjertorpAPI.csproj",
   "expectedPackageFiles": [
+    "/Users/oliverjohansson/.nuget/packages/bcrypt.net-next/4.0.2/bcrypt.net-next.4.0.2.nupkg.sha512",
     "/Users/oliverjohansson/.nuget/packages/dnsclient/1.4.0/dnsclient.1.4.0.nupkg.sha512",
     "/Users/oliverjohansson/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "/Users/oliverjohansson/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
