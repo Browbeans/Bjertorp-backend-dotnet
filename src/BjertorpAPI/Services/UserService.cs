@@ -45,5 +45,19 @@ namespace BjertorpAPI.Services
             await _userCollection.DeleteOneAsync(x => x._id == id);
             return $"{user.email} has been deleted";
         }
+
+        public async Task<string> Login(LoginModel user)
+        {
+            var existingUser = await GetUserByEmail(user.email);
+            if (existingUser == null) return "Wrong password or email";
+            if(!BCrypt.Net.BCrypt.Verify(user.password, existingUser.password)) return "wrong password or username";
+            return $"{user.email} has logged in";
+        }
+
+        public async Task<User> GetUserByEmail(string email)
+        {
+            User user = await _userCollection.Find(x => x.email == email).FirstOrDefaultAsync();
+            return user; 
+        }
     }
 }
