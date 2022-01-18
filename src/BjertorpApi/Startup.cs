@@ -49,7 +49,8 @@ namespace BjertorpAPI
                                   builder =>
                                   {
                                       builder.WithOrigins("http://localhost:3000",
-                                                          "https://vara-bjertorp-front.azurewebsites.net");
+                                        "https://vara-bjertorp-front.azurewebsites.net")
+                                        .AllowAnyMethod().AllowAnyHeader().AllowCredentials();
                                   });
             });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
