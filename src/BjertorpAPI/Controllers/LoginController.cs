@@ -21,9 +21,9 @@ namespace BjertorpAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<string> Login(LoginModel user)
+        public async Task<IActionResult> Login(LoginModel user)
         {
-            return await _userService.Login(user);
+            return Ok(await _userService.Login(user));
         }
 
         [HttpDelete]

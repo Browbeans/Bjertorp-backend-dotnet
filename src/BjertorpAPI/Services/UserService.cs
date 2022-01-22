@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BjertorpAPI.Exceptions;
 using BjertorpAPI.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
@@ -32,7 +33,7 @@ namespace BjertorpAPI.Services
         {
             string hashedPassword = BCrypt.Net.BCrypt.HashPassword(newUser.password);
             var existingUser = await _userCollection.Find(x => x.email == newUser.email).FirstOrDefaultAsync();
-            if (existingUser != null) return $"User with email: {newUser.email} already exist";
+            if (existingUser != null) throw new HttpExceptionResponse(401, $"User with email: {newUser.email} already exist");
             newUser.password = hashedPassword;
             await _userCollection.InsertOneAsync(newUser);
             return $"User with email {newUser.email} has been created"; 
@@ -48,9 +49,10 @@ namespace BjertorpAPI.Services
 
         public async Task<string> Login(LoginModel user)
         {
+            Console.WriteLine(user.email);
             var existingUser = await GetUserByEmail(user.email);
-            if (existingUser == null) return "Wrong password or email";
-            if(!BCrypt.Net.BCrypt.Verify(user.password, existingUser.password)) return "wrong password or username";
+            if (existingUser == null) throw new HttpExceptionResponse(500,"Wrong password or email");
+            if(!BCrypt.Net.BCrypt.Verify(user.password, existingUser.password)) throw new HttpExceptionResponse(404, $"wrong password or email");
             return $"{user.email} has logged in";
         }
 
